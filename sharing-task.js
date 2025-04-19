@@ -36,6 +36,20 @@ reusable functions that solve specific tasks. This activity encourages:
 // 3. Capitalize the role if needed.
 // 4. Return the result.
 
+const readline = require('readline-sync');
+
+/*
+let attendeeName = readline.question("Please enter your name : ");
+let attendeeRole = readline.question("Please enter your role : ");
+
+function attendeeBadge(name,role)
+{
+    return "Name : " + attendeeName + " ,Role : " + attendeeRole.charAt(0).toUpperCase() + attendeeRole.slice(1);
+}
+
+
+console.log(attendeeBadge(attendeeName,attendeeRole));
+*/
 
 // ============================================
 // 🧩 Task 2: Calculate Event Cost
@@ -44,12 +58,35 @@ reusable functions that solve specific tasks. This activity encourages:
 // - Takes number of attendees and cost per attendee.
 // - Applies a 10% discount if attendees exceed 100.
 // - Returns the total cost.
-
 // Steps:
 // 1. Multiply attendees by cost.
 // 2. Check if attendee count is over 100.
 // 3. If so, apply a 10% discount.
 // 4. Return the final total.
+
+
+let attendeeCount = readline.question("Please enter the number of attendees. ");
+let attendeeCost = readline.question("Please enter the cost per attendee. ");
+
+function totalCost(count,cost)
+{
+    let Costing = count*cost;
+
+    if  (count > 100)
+    {       let discountedCost = Costing*(10/100);
+            return "10% discount applied, as the number of attendees are more than 100 : \n Total cost is :" + discountedCost;
+    }
+   
+    else
+    {
+        return "Total cost is : " + Costing ;
+    }
+}
+
+console.log(totalCost(attendeeCount, attendeeCost));
+
+
+
 
 
 // ============================================
@@ -64,6 +101,21 @@ reusable functions that solve specific tasks. This activity encourages:
 // 1. Check if the string includes both "@" and ".".
 // 2. Return true or false accordingly.
 
+let emailId = readline.question("Please enter your email id :");
+function emailIdCheck(email)
+{
+    
+    if(emailId.includes("@") && emailId.includes("."))
+    {
+            return true;
+    }
+    else
+    {  
+        return false;
+    }
+}
+
+console.log(emailIdCheck(emailId));
 
 // ============================================
 // 🧠 Collaborative Steps
